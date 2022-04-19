@@ -1,0 +1,161 @@
+.global_cont{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+   
+}
+.userName{
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    height: 10;
+   
+}
+.nombre{
+    margin-left: 10px;
+}
+.nombre::first-letter{
+    text-transform: uppercase;
+    
+}
+.cont{
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+.container{
+    
+    align-items: center;
+    background-color: #1E2D3F; 
+    width: 90%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-radius: 25px;
+    
+}
+
+.containerInputs{
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    width: 70%;
+
+    border-radius: 20px;
+    height: 400px;
+    
+}
+
+.iconoHome1{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    height: 60%;
+    margin-top: 40px;
+    background-image: url('../../img/carga.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.iconoHome2{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    height: 60%;
+    margin-top: 40px;
+    background-image: url('../../img/descarga.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.containerInputs:hover{
+    background-color: rgb(78, 75, 75);
+    color: white;
+    transition: 1s;
+}
+.opcion{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    margin-top: 20px;
+}
+.check{
+    width: 80px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+.activo{
+    background-color: white;
+}
+.icono{
+    color: aqua;
+    max-width: 60px;
+    
+
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    justify-content: center;
+    margin: 10%;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.campo{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+    margin-top: 5%;
+}
+.campo label{
+    color: #fff;
+    font-size: 30px;
+    text-align: left;
+}
+.campo input{
+    color: #1E2D3F;
+    font-size: 20px;
+    text-align: left;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.campo select{
+    color: #1E2D3F;
+    font-size: 20px;
+    text-align: left;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.btn_cont{
+    display: flex;
+    justify-content: left;
+    margin-top: 5%;
+
+    
+}
+.btn_submit{
+    background-color: #fff;
+    width: 90%;
+    color: #1E2D3F;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.btn_submit:hover{
+    background-color: #324a68;
+    color: #fff;
+    transition: 1s;
+}

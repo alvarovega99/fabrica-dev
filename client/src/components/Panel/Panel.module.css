@@ -1,0 +1,128 @@
+.contenedorCubos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cuboTotal{
+    background-color: #1E2D3F;
+    width: 300px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    z-index: 10;
+    
+}
+.cuboTotal h2{
+    font-size: 30px;
+    color: #fff;
+}
+.cuboTotal h3{
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+.containerTabla{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    
+}
+.tabla{
+    width: 80%;
+}
+.titulos{
+    background-color: #1E2D3F;
+    color: #fff;
+    
+}
+.titulos tr{
+    margin: 0;
+    border: none;
+    
+}
+.titulos th{
+    padding: 10px;
+    margin: 0;
+}
+.botonesGalleta{
+    background-color: #1E2D3F;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    
+}
+.conteBotones{
+    width: 300px;
+    flex-wrap: wrap;
+}
+
+
+.modal{
+    display: none;
+    position: relative;
+    background-color: #1E2D3F;
+    width: 280px;
+    height: 150px;
+    border-radius: 15px;
+    bottom: 85px;
+    transition: 1s;
+    z-index: 200;
+}
+.activo{
+    display: block;
+}
+.contenidoModal{
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 25px;
+}
+.contenidoModal button{
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    justify-content: left;
+    margin-top: 4%;
+    
+}
+.botonCerrar{
+    display: flex;
+    justify-content: right;
+    width: 90%;
+    height: 10%;
+  
+    
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.nav h1{
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+.nav h2{
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+.panel{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}

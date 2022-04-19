@@ -1,0 +1,138 @@
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalForm{
+    display: none;
+    background-color: #1E2D3F;
+    width: 400px;
+    height: 230px;
+    border-radius: 10px;
+}
+.activo{
+    display: block;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario h2{
+    color: #fff;
+}
+.formulario label{
+    color: #fff;
+    font-weight: bold;
+}
+.formulario input{
+    background-color: #fff;
+    color: #1E2D3F;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+}
+.enviar{
+    width: 30%;
+    background-color: #fff;
+    border: none;
+    color: #1E2D3F;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+
+.botonCerrar{
+    display: flex;
+    justify-content: right;
+    width: 90%;
+    height: 10%;    
+    align-items: center;
+}
+.botonCerrar button{
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    justify-content: left;
+    margin-top: 4%;
+}
+.abrirModal{
+    width: 20%;
+    height: 30px;
+
+}
+.tablasForm{
+    width: 100%;
+    border: 1px solid #1E2D3F;
+
+}
+.tablasForm tbody{
+    overflow: scroll;
+    max-height: 300px;
+}
+.contenedorFormUser{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.formUsuario{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.botonn{
+    height: 40px;
+    margin-top: 2%;
+    display: block;
+    background-color: #fff;
+    color: #1E2D3F;
+    font-weight: bold;
+    border: 2px solid #1E2D3F;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 30%;
+    
+}
+.formUsuario label{
+  margin-top: 2%;
+  font-size: 20px;
+  color: #1E2D3F;
+  font-weight: bold;
+  text-align: left;
+  width: 30%;
+
+}
+
+.formUsuario input{
+    display: flex;
+    border: none;
+    background-color: #1E2D3F;
+    height: 40px;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+}
+.panel{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}

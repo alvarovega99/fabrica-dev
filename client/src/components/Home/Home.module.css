@@ -1,0 +1,77 @@
+
+
+.global_cont{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+   
+}
+.userName{
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    height: 10;
+   
+}
+.nombre{
+    margin-left: 10px;
+}
+.nombre::first-letter{
+    text-transform: uppercase;
+    
+}
+.cont{
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+.container{
+    
+    align-items: center;
+    background-color: #1E2D3F; 
+    width: 90%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border-radius: 25px;
+    
+}
+
+.containerInputs{
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    width: 70%;
+
+    border-radius: 20px;
+    height: 400px;
+    
+}
+
+.iconoHome1{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: 60%;
+    margin-top: 40px;
+    background-image: url('../../img/carga.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.iconoHome2{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: 60%;
+    margin-top: 40px;
+    background-image: url('../../img/descarga.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.containerInputs:hover{
+    background-color: rgb(78, 75, 75);
+    color: white;
+    transition: 1s;
+}
