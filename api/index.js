@@ -1,9 +1,12 @@
-const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const { dbConnection } = require('./src/bd/connection')
+const http = require('./src/app')
+// eslint-disable-next-line no-unused-vars
 
-// Sincronizar todos los modelos a la vez
-conn.sync({ force:false}).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-});
+require('dotenv').config()
+
+dbConnection()
+
+http.listen(process.env.SERVER_PORT, () => {
+  // eslint-disable-next-line no-console
+  console.log(`Servidor corriendo en el puerto ${process.env.SERVER_PORT}`)
+})
