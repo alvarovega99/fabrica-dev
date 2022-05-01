@@ -1,7 +1,7 @@
 const Operaciones  = require('../modelsMongo/operaciones');
 
-function findAllOperaciones (){
-    return Operaciones.find();
+function findAllOperaciones (filtros){
+    return Operaciones.find(filtros);
 }
 
 function getOneOperacion(filtro){
@@ -26,9 +26,13 @@ async function deleteOperacion(filtro){
     return await Operaciones.destroy(filtro);
 }
 
+async function updateOperacion(filtro, update){
+    return Operaciones.findOneAndUpdate(filter, update)
+}
 module.exports = {
     findAllOperaciones,
     getOneOperacion,
     createOperacion,
-    deleteOperacion
+    deleteOperacion,
+    updateOperacion
 }
