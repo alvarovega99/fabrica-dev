@@ -95,3 +95,24 @@
     color: #fff;
     transition: 1s;
 }
+
+@media only screen and (max-width: 768px) {
+    .cont {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+    .container {
+        width: 100%
+    }
+    .campo {
+        width: 100%;
+        text-align: center;
+    }
+    .containerInputs {
+        width: 100%;
+    }
+    .formulario {
+        width: 100%;
+    }
+}

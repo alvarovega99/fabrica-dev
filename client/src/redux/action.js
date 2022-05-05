@@ -18,6 +18,7 @@ export const POST_SALIDA  = 'POST_SALIDA';
 export const SET_MENSAJE = 'SET_MENSAJE';
 export const ELIMINAR_UBICACION = 'ELIMINAR_UBICACION';
 export const ELIMINAR_PRODUCTO = 'ELIMINAR_PRODUCTO';
+export const LOG_OUT= 'LOG_OUT'
 // Language: javascript
 
 
@@ -209,6 +210,15 @@ export function postSalida(obj){
         dispatch({
             type: POST_SALIDA,
             payload: res.data
+        })
+  }
+}
+
+export function logOut(){
+    return async function (dispatch) {
+        dispatch({
+            type: LOG_OUT,
+            payload: 'logout'
         })
   }
 }

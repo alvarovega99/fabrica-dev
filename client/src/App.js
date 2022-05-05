@@ -14,14 +14,19 @@ import FormulariosPanel from './components/Panel/FormulariosPanel';
 import FormUsuario from './components/Panel/FormUsuario';
 import Tirar from './components/Tirar/Tirar';
 import DetalleTirar from './components/DetalleTirar/DetalleTirar';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { logOut } from '../src/redux/action'
 function App() {
+  const dispatch = useDispatch()
   const user =  useSelector(state => state.userLog);
+  const ruta = window.location.pathname
   return (
     <div className='App'>
 
+    <div onClick={() => {dispatch(logOut())}} className={`${user.length !== 0 ? 'salir' : 'oculto'}`}>Salir</div>
+
     <Routes>
-    {/*   <Route path='/' element={<Login/>}/>
+      <Route path='/' element={<Login/>}/>
       <Route path='/Home' element={user.tipo === 2 ? <Home/> : <Login/>}/>
       <Route path='/Ingresar' element={user.tipo === 2 ? <FormIngreso/> : <Login/>}/>
       <Route path='/VerificarIngreso' element={user.tipo === 2 ? <DetalleIngreso/> : <Login/>}/>
@@ -34,9 +39,9 @@ function App() {
       <Route path='/FormularioUsuario' element={user.tipo === 1 ?<FormUsuario/>: <Login/>}/>
      
       <Route path='/VerificarCargaTirar' element={<DetalleTirar/>}/>
-      <Route path='/Tirar' element={<Tirar/>}/> */}
+      <Route path='/Tirar' element={<Tirar/>}/> 
 
-      <Route path='/' element={<Login/>}/>
+ {/*      <Route path='/' element={<Login/>}/>
       <Route path='/Home' element={<Home/>}/>
       <Route path='/Ingresar' element={<FormIngreso/>}/>
       <Route path='/VerificarIngreso' element={<DetalleIngreso/>}/>
@@ -47,9 +52,8 @@ function App() {
       <Route path='/FormProductos' element={<FormProductos/>}/>
       <Route path='/FormulariosPanel' element={<FormulariosPanel/>}/>
       <Route path='/FormularioUsuario' element={<FormUsuario/>}/>
-     
       <Route path='/VerificarCargaTirar' element={<DetalleTirar/>}/>
-      <Route path='/Tirar' element={<Tirar/>}/>
+      <Route path='/Tirar' element={<Tirar/>}/> */}
 
     </Routes>
 

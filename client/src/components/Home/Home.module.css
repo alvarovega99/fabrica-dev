@@ -44,7 +44,6 @@
     margin: 0 auto;
     background-color: #fff;
     width: 70%;
-
     border-radius: 20px;
     height: 400px;
     
@@ -74,4 +73,37 @@
     background-color: rgb(78, 75, 75);
     color: white;
     transition: 1s;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        height: auto;
+        width: 100%;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+    .global_cont{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+    .userName{
+        width: 100%;
+    }
+    .cont{
+        width: 100%;
+    }
+    .campo label{
+        font-size: 20px;
+    }
+    .containerInputs {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
 }

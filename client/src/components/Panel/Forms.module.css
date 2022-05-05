@@ -136,3 +136,49 @@
     display: block;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 768px) {
+    .contenedorFormUser {
+        width: 100%;
+    }
+    .formUsuario {
+        width: 100%;
+    }
+   .formulario input{
+    background-color: #fff;
+    color: #1E2D3F;
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    }
+    .formUsuario label {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+    .botonn {
+        margin: 2rem 0;
+        width: 100%;
+    }
+    .containerForm {
+        box-sizing: border-box;
+        padding: 0 1rem;
+        width: 100%;
+    }
+    .modalForm {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 1rem 0;
+    }
+    .modalForm label {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+    .modalForm input {
+        width: 100%;
+        margin: 0;
+    }
+}

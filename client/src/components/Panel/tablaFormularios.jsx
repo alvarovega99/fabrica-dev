@@ -50,7 +50,7 @@ export default function TablaFormulario({ ubi }) {
   }
 
   return (
-    <div style={{ height: "100%", width: "80%" }}>
+    <div style={{ height: "100%", width: "100%" }}>
       {cargando ? (
         <div>
           {" "}

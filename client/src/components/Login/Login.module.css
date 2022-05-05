@@ -71,3 +71,40 @@
     font-weight: bold;
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+    .container {
+        height: auto;
+        width: 100%;
+        margin-bottom: 3rem;
+        display: flex;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+    .global_cont{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .userName{
+        width: 100%;
+    }
+    .cont{
+        width: 100%;
+    }
+    .campo label{
+        font-size: 20px;
+    }
+    .containerInputs {
+        width: 100%;
+    }
+}

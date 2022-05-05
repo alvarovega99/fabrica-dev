@@ -1,4 +1,4 @@
-import { LOGIN_USER, VERIFICAR, GET_PRODUCTOS, GET_UBICACIONES, GET_LOTE, GET_TOTAL_GALLETA, GET_TOTAL_POLVO_ID, GET_TOTAL_POLVO, GET_OPERACIONES ,GET_TOTAL_GALLETA_ID, POST_USUARIOS, POST_OPERACIONES_INGRESO, POST_SALIDA,SET_MENSAJE, ELIMINAR_PRODUCTO, ELIMINAR_UBICACION } from "./action";
+import { LOG_OUT, LOGIN_USER, VERIFICAR, GET_PRODUCTOS, GET_UBICACIONES, GET_LOTE, GET_TOTAL_GALLETA, GET_TOTAL_POLVO_ID, GET_TOTAL_POLVO, GET_OPERACIONES ,GET_TOTAL_GALLETA_ID, POST_USUARIOS, POST_OPERACIONES_INGRESO, POST_SALIDA,SET_MENSAJE, ELIMINAR_PRODUCTO, ELIMINAR_UBICACION } from "./action";
 
 
 const inicialState = {
@@ -16,6 +16,11 @@ const inicialState = {
 
 const rootReducer = (state = inicialState, action) => {
     switch (action.type) {
+        case LOG_OUT:
+            return {
+                ...state,
+                userLog: []
+            }
         case LOGIN_USER:
             return {
                 ...state,

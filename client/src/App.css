@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.salir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1e2d3fa1; 
+  color: rgba(255, 255, 255, 0.568);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.3s all;
+  z-index: 100;
+}
+.salir:hover {
+  cursor: pointer;
+  background-color: #1E2D3F; 
+  color: white;
+}
+.oculto{
+  display: none;
+}

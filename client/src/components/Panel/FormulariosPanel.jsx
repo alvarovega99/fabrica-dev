@@ -10,10 +10,10 @@ export default function FormulariosPanel() {
             <Nav />
             <h1>items</h1>
             <div className={style.gridForms}>
-                <div>
+                <div style={{ height: "100%", width: "100%", marginTop:"5%" }}>
                     <FormProductos />
                 </div>
-                <div>
+                <div style={{ height: "100%", width: "100%", marginTop:"5%" }}>
                     <FormUbicaciones />
                 </div>
             </div>
