@@ -1,4 +1,4 @@
-const { findAllOperaciones, getOneOperacion, deleteOperacion, createOperacion } = require('../services/operaciones')
+const { findAllOperaciones, getOneOperacion, deleteOperacion, createOperacion, updateOperacion } = require('../services/operaciones')
 
 async function getAllOperaciones(req,res){
     try{
@@ -15,7 +15,7 @@ async function getAllOperaciones(req,res){
     }
 }
 
-async function getOperacion(req, res){
+async function getOperacionByCode(req, res){
     try{
         const { codigoCarga } = req.params
         const operacion = await getOneOperacion(
@@ -71,9 +71,33 @@ async function crearOperacion(req, res){
         res.send(err.message);
     }
 }
+async function sacarOperacion(req, res){
+    const { status, codigoCarga }
+    try{
+        const search = await getOneOperacion({codigoCarga})
+        if(search === null){
+            res.status(400).json({
+                message:'operacion no encontrada'
+            })
+        }else{
+            const operacion = await createOperacion({
+                codigoCarga:search.codigoCarga, 
+                tipoIngreso:search.tipoIngreso, 
+                tipoOperacion:search.tipoOperacion, 
+                idProducto:search.idProducto, 
+                cantidad:search.cantidad, 
+                status: status, 
+                ubicacion:search.ubicacion , 
+                vencimiento:search.vencimiento
+            })
+            await updateOperacion({codigoCarga}, { status })
+        }
+    }
+}
 module.exports ={
     getAllOperaciones,
-    getOperacion,
+    getOperacionByCode,
     deleteOperacion,
     crearOperacion,
+
 }
