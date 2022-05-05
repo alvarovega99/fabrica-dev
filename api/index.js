@@ -1,4 +1,4 @@
-const { dbConnection } = require('./src/bd/connection')
+const { dbConnection } = require('./src/db/connection')
 const http = require('./src/app')
 // eslint-disable-next-line no-unused-vars
 

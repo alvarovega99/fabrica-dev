@@ -1,0 +1,1 @@
+const {createUsuario, getOneUsuario, findAllUsuarios, deleteUsuario} = require('../services/usuarios');

@@ -1,4 +1,5 @@
 const Usuario  = require('../modelsMongo/usuarios');
+const bcrypt = require("bcryptjs")
 
 function findAllUsuarios (){
     return Usuario.find();
@@ -13,7 +14,7 @@ async function createUsuario(usuario){
         nombre: usuario.nombre,
         apellido: usuario.apellido,
         legajo: usuario.legajo,
-        password: usuario.password,
+        password: await bcrypt.hash(password, rondasHash),
         tipo: usuario.tipo
     })
     return await op.save();

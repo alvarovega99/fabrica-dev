@@ -72,7 +72,7 @@ async function crearOperacion(req, res){
     }
 }
 async function sacarOperacion(req, res){
-    const { status, codigoCarga }
+    const { status, codigoCarga } = req.body
     try{
         const search = await getOneOperacion({codigoCarga})
         if(search === null){
@@ -92,12 +92,18 @@ async function sacarOperacion(req, res){
             })
             await updateOperacion({codigoCarga}, { status })
         }
+    }catch (err) {
+        res.status(500).json({
+            message:'error',
+            error: err.message
+        })
     }
 }
+
 module.exports ={
     getAllOperaciones,
     getOperacionByCode,
     deleteOperacion,
     crearOperacion,
-
+    sacarOperacion,
 }

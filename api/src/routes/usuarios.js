@@ -4,52 +4,13 @@ const { Usuarios, Operaciones } = require('../db')
 const {v4: uuidv4} = require('uuid');
 const usuarios = require('../models/Usuarios');
 const bcrypt = require("bcryptjs")
-router.get('/', async (req, res) => {
-    try {
-        const users = await Usuarios.findAll({
-            include: Operaciones
-        });
-        res.status(200).send(users);
-    }catch (err) {
-        res.send(err.message);
-    }
-})
+router.get('/',)
 
-router.get('/:id', async (req, res) => {
-    try {
-        const { id } = req.params
-        const users = await Usuarios.findOne({
-            where: {
-              idUsuario: id
-            },
-
-            include: Operaciones
-        });
-        res.status(200).send(users);
-    }catch (err) {
-        res.send(err.message);
-    }
-})
+router.get('/:id', )
 
 
-router.post('/', async (req, res) => {
-    try {
-        const { nombre, apellido, legajo, password, tipo} = req.body;
-        const rondasHash = 12;
-        const user = await Usuarios.create({
-            nombre: nombre,
-            apellido: apellido,
-            legajo: legajo,
-            password: await bcrypt.hash(password, rondasHash),
-            tipo: tipo
-        })
-        res.status(200).json({
-            message: 'corfirmado',
-        });
-    }catch (err) {
-        res.send(err.message);
-    }
-})
+router.post('/', )
+
 router.post("/loginUser", async (req, res) => {
 
     const { legajo, password } = req.body
