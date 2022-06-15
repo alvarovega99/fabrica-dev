@@ -28,7 +28,7 @@ export default function DetalleTirar(){
         
     }, [dispatch])
     
-    useEffect(() => {
+/*     useEffect(() => {
         if (mensaje !== '') {
             Swal.fire({
                 position: 'center',
@@ -39,11 +39,27 @@ export default function DetalleTirar(){
             navigate('/Home')
             
         }
-    }, [mensaje])
+    }, [mensaje]) */
 
     function handleSubmit(e){
         e.preventDefault()
-        dispatch(postSalida({id: info.codigoCarga, status:'tirado', idUsuario:usuario.id}))
+        dispatch(postSalida({id: info.codigoCarga, status:'tirado', idUsuario:usuario.id})).then((res) => {
+            console.log(res, "res -este es el res");
+            if (res.payload.message === "confirmado") {
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Operación realizada con éxito",
+              });
+              navigate("/Home");
+            } else {
+              Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Error al realizar la operación",
+              });
+            }
+          });
     }
     return (
         <div className={style.global_cont}>

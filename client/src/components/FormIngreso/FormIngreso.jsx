@@ -66,7 +66,6 @@ export default function FormIngreso() {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(verificar(state))
-        console.log(state)
         navigate('/VerificarIngreso')
     }
 

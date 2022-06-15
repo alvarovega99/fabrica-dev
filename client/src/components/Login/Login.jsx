@@ -54,12 +54,15 @@ const Login = () => {
         dispatch(loginUser(state)).then((user) => {
             console.log(user)
             if (user.payload.user.tipo === 1) {
+                dispatch(setMensaje())
                 history('/panel')
             }
             else if (user.payload.user.tipo === 2) {
+                dispatch(setMensaje())
                 history('/Home')
             }
             else {
+                dispatch(setMensaje())
                 history('/')
             }
         })

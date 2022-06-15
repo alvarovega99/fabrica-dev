@@ -28,7 +28,7 @@ export default function DetalleSalida(){
         
     }, [dispatch])
     
-    useEffect(() => {
+  /*   useEffect(() => {
         if (mensaje !== '') {
             Swal.fire({
                 position: 'center',
@@ -40,11 +40,27 @@ export default function DetalleSalida(){
             
         }
     }, [mensaje, dispatch, navigate])
-
+ */
 
     function handleSubmit(e){
         e.preventDefault()
-        dispatch(postSalida({id: info.codigoCarga, status:'salida', idUsuario:usuario.id}))
+        dispatch(postSalida({id: info.codigoCarga, status:'salida', idUsuario:usuario.id})).then((res) => {
+            console.log(res, "res -este es el res");
+            if (res.payload.message === "confirmado") {
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Operación realizada con éxito",
+              });
+              navigate("/Home");
+            } else {
+              Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Error al realizar la operación",
+              });
+            }
+          });
     }
     return (
         <div className={style.global_cont}>

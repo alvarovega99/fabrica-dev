@@ -32,7 +32,7 @@ export default function DetalleIngreso() {
     dispatch(getUbicaciones());
   }, [dispatch]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (mensaje !== "") {
       Swal.fire({
         position: "center",
@@ -42,11 +42,28 @@ export default function DetalleIngreso() {
       dispatch(setMensaje());
       navigate("/Home");
     }
-  }, [mensaje, dispatch, navigate]);
+  }, [mensaje, dispatch, navigate]); */
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(ingresarOperacion(info));
+    dispatch(ingresarOperacion(info)).then((res) => {
+      console.log(res, "res -este es el res");
+      if (res.payload.message === "confirmado") {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Operación realizada con éxito",
+        });
+        navigate("/Home");
+      } else {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Error al realizar la operación",
+        });
+      }
+    });
+
   }
 
   console.log(producto, ubicacion, "acadf estas");
