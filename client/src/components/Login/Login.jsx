@@ -22,7 +22,7 @@ const Login = () => {
     const handleChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value })
     }
-    useEffect(() => {
+/*     useEffect(() => {
         if (mensaje !== '') {
             Swal.fire({
                 position: 'center',
@@ -30,8 +30,10 @@ const Login = () => {
                 title: mensaje === '' ? 'Cargando' : mensaje.message,
             })
             if (mensaje === 'confirmado' && user.tipo === 1) {
-                dispatch(setMensaje())
-                history('/panel')
+                dispatch(setMensaje()).then(() => {
+                    history('/panel')
+                }
+                )
                
             }
             else if (mensaje === 'confirmado' && user.tipo === 2) {
@@ -45,11 +47,23 @@ const Login = () => {
             }
             
         }
-    }, [mensaje])
+    }, [mensaje]) */
 
     const handleSumbit = (e) => {
         e.preventDefault();
-        dispatch(loginUser(state));
+        dispatch(loginUser(state)).then((user) => {
+            console.log(user)
+            if (user.payload.user.tipo === 1) {
+                history('/panel')
+            }
+            else if (user.payload.user.tipo === 2) {
+                history('/Home')
+            }
+            else {
+                history('/')
+            }
+        })
+
     }
 
     return (
