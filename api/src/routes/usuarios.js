@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Usuarios, Operaciones } = require('../db')
 const {v4: uuidv4} = require('uuid');
-const usuarios = require('../models/Usuarios');
 const bcrypt = require("bcryptjs")
 router.get('/',)
 

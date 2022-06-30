@@ -59,6 +59,24 @@ async function createUbicacion(req, res){
 
 }
 
+async function deleteUbicaciones(req, res){
+    const arrayIds = req.body.ids;
+    try{
+        for(let i = 0; i < arrayIds.length; i++){
+            await deleteUbicacion({_id: arrayIds[i]});
+        }
+        res.status(200).json({
+            message: 'Ubicaciones eliminadas'
+        })
+    }
+    catch (err) {
+        res.status(500).json({
+            message:'error',
+            error: err.message
+        })
+    }
+}
+
 module.exports = {
     getOneUbicacion,
     getAllUbicaciones,

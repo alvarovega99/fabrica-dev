@@ -11,7 +11,10 @@ async function getAllOperaciones(req,res){
             });
         }
     }catch (err) {
-        res.send(err.message);
+        res.status(500).json({
+            message:'error',
+            error: err.message
+        })
     }
 }
 
@@ -29,7 +32,10 @@ async function getOperacionByCode(req, res){
             });
         }
     }catch (err) {
-        res.send(err.message);
+        res.status(500).json({
+            message:'error',
+            error: err.message
+        })
     }
 }
 
@@ -48,13 +54,22 @@ async function deleteOperacion(req, res){
             });
         }
     }catch (err) {
-        res.send(err.message);
+        res.status(500).json({
+            message:'error',
+            error: err.message
+        })
     }
 }
 
 async function crearOperacion(req, res){
     try{
         const { codigoCarga, tipoIngreso, tipoOperacion, idProducto, cantidad, status, ubicacion, vencimiento } = req.body
+        const search = await getOneOperacion({codigoCarga, tipoOperacion})
+        if(search !== null){
+            res.status(409).json({
+                message:'operacion ya existe'
+            })
+        }
         const operacion = await createOperacion({
             codigoCarga, tipoIngreso, tipoOperacion, idProducto, cantidad, status, ubicacion, vencimiento
         })
@@ -68,7 +83,10 @@ async function crearOperacion(req, res){
             });
         }
     }catch (err) {
-        res.send(err.message);
+        res.status(500).json({
+            message:'error',
+            error: err.message
+        })
     }
 }
 async function sacarOperacion(req, res){

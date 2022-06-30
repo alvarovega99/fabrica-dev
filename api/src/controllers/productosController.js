@@ -11,7 +11,10 @@ async function getAllProductos(req, res){
             });
         }
     }catch (err) {
-        res.send(err.message);
+        res.json({
+            message: 'error',
+            error: err.message
+        })
     }
 }
 async function createProducto(req, res){
@@ -22,22 +25,27 @@ async function createProducto(req, res){
             message: 'Producto creado',
         });
     }catch (err) {
-        res.send(err.message);
+        res.json({
+            message: 'error',
+            error: err.message
+        })
     }
 }
 
 async function deleteProducto(req, res){
     const array = req.body.array
     try {
-        array.forEach(async (id) => {
-            await deleteProducto({_id: id});
+        for (let i = 0; i < array.length; i++) {
+            await deleteProducto({_id : array[i]});
         }
-        )
         res.status(200).json({
             message: 'confirmado',
         });
     } catch (err) {
-        res.send(err.message)
+        res.json({
+            message: 'error',
+            error: err.message
+        })
     }
 }
 

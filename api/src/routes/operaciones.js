@@ -1,9 +1,7 @@
 const e = require('express');
 const express = require('express');
 const router = express.Router();
-const { Operaciones } = require('../db')
 
-const { Usuarios, Productos } = require('../db')
 
 //trae toda las operaciones con el usuario que la creo
 router.get('/', async (req, res) => {

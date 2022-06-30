@@ -39,7 +39,7 @@
 
 .salir {
   position: fixed;
-  bottom: 20px;
+  bottom: 90%;
   right: 20px;
   background-color: #1e2d3fa1; 
   color: rgba(255, 255, 255, 0.568);

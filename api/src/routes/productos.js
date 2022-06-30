@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const { Productos } = require('../db')
 const {v4: uuidv4} = require('uuid');
 
 router.get('/', )
